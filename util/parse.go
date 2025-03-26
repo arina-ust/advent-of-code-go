@@ -69,3 +69,19 @@ func ReadMatrixString(filepath string) ([][]string, error) {
 
 	return matrix, scanner.Err()
 }
+
+func ReadRuneGrid(filepath string) ([][]rune, error) {
+	file, err := os.Open(filepath)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	var grid [][]rune
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		grid = append(grid, []rune(scanner.Text()))
+	}
+
+	return grid, scanner.Err()
+}

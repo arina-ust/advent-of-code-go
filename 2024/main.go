@@ -8,7 +8,7 @@ import (
 func main() {
 	fmt.Println("Calculating solution for...")
 
-	day, res, err := day6.Solve(false)
+	day, res, err := day6.Solve(true)
 
 	fmt.Println("---> ", day, " <---")
 	fmt.Println()
